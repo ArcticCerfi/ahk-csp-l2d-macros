@@ -6,14 +6,17 @@
 
 walker := CSPLayerWalker()
 
-Suffix := ""
-if A_Args.Length > 0
-    Suffix := A_Args[1]
+if A_Args.Length == 0 {
+    MsgBox "Please provide both a String to append as a command line argument."
+    return
+}
+Suffix := A_Args[1]
+    
 
 AppendToLayer(name, w) {
     newName := name . Suffix
     w.RenameCurrentLayer(newName)
-    return "stop"
+    return "stop" ; Stop walking after appending to the first layer
 }
 
 walker.WalkLayers(AppendToLayer)
