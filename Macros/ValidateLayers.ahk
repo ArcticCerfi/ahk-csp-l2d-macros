@@ -4,7 +4,7 @@
 
 ;; valid Live2D layer names must start with a letter or underscore, and can contain letters, numbers, and underscores, with a maximum length of 63 characters.
 ;; Go to the top of your file or layer group and make sure all child groups are expanded.
-;; This macro will stop when it hits an invalid layer OR when it hits an end marker.
+;; This macro will stop when it hits an invalid layer, when it hits an end marker or loops back to the top and thus hits a duplicate layer name.
 
 walker := CSPLayerWalker()
 layerMap := Map()

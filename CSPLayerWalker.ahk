@@ -17,10 +17,8 @@ Q::ExitApp() ; Kill the script with the Q key when its running.
 if (!WinActive("ahk_exe CLIPStudioPaint.exe"))
     ExitApp()
 
-
-
 class CSPLayerWalker {
-    delay := 60
+    delay := 60                   ; Delay between key presses in milliseconds.
     stopMarker := "END"           ; When this string is found in a layer name, the macro will stop instantly.
     keybinds := {
         selectAllTxt: "^a",
